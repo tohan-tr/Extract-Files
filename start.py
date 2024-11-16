@@ -54,10 +54,10 @@ def index():
 def open_browser():
     """Open the web browser with a delay to allow the server to start."""
     time.sleep(1)
-    webbrowser.open('http://127.0.0.1:5001/')
+    webbrowser.open('http://127.0.0.1:5004/')
 
 if __name__ == '__main__':
-    server_thread = threading.Thread(target=lambda: app.run(debug=True, port=5001, use_reloader=False)) 
+    server_thread = threading.Thread(target=lambda: app.run(debug=True, port=5004, use_reloader=False)) 
     server_thread.start()
 
     open_browser()
