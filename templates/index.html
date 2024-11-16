@@ -273,10 +273,10 @@
         const file = event.target.files[0];
         if (file) {
           const fileName = file.name;
-          const fileSize = (file.size / (1024 * 1024)).toFixed(2); // MB cinsinden
+          const fileSize = (file.size / (1024 * 1024)).toFixed(2);
 
           const dropzoneText = document.getElementById(`dropzone-text${dropzoneId}`);
-          dropzoneText.style.display = 'none';  // Yükleme yazısını gizle
+          dropzoneText.style.display = 'none';
 
           const fileInfo = document.getElementById(`fileInfo${dropzoneId}`);
           const dropzone = document.getElementById(`dropzone${dropzoneId}`);
@@ -299,7 +299,7 @@
         document.getElementById(`removeFile${dropzoneId}`).style.display = 'none';
         
         const dropzoneText = document.getElementById(`dropzone-text${dropzoneId}`);
-        dropzoneText.style.display = 'block';  // Yükleme yazısını tekrar göster
+        dropzoneText.style.display = 'block';
         
         checkMergeAvailability();
       }
@@ -316,7 +316,7 @@
         const progressInterval = setInterval(() => {
           let progress = parseInt(progressElem.style.width.replace('%', '')) || 0;
           if (progress < 100) {
-            progress += Math.random() > 0.5 ? 1 : 3;  // Yavaş ve hızlı artış
+            progress += Math.random() > 0.5 ? 1 : 3;
             progress = Math.min(progress, 100);
             progressElem.style.width = progress + '%';
             progressElem.innerText = progress + '%';
@@ -348,8 +348,8 @@
 
         Promise.all(fileContents).then(contents => {
           let allPasswords = contents.flat();
-          allPasswords = [...new Set(allPasswords)];  // Aynı şifrelerden sadece birini al
-          allPasswords.sort();  // Alfabetik sıralama
+          allPasswords = [...new Set(allPasswords)];
+          allPasswords.sort();
           mergedContent = allPasswords.join('\n');
           saveFile('TOHAN.txt', mergedContent);
         }).catch(err => {
