@@ -12,7 +12,7 @@ Usage
 
     Clone or download the project:
 
-    git clone https://github.com/username/project_name.git
+    git clone https://github.com/tohan-tr/Extract-Files/tree/main
 
     Open the index.html file in a browser.
 
